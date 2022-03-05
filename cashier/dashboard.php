@@ -89,7 +89,7 @@ include 'cashier.php';
                                             $mfgdate = $fetch['product_date_of_manufacture'];
                                             $expiry = $fetch['product_expiry_date'];
                                             $price = $fetch['product_unit_price'];
-                                            $amount = $fetch['product_amount'];
+                                            $amount = $fetch['product_quantity'];
                                             $proid = $fetch['product_id'];
 
 

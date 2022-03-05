@@ -71,7 +71,6 @@ include 'admin.php';
                                                 $productsrows = mysqli_num_rows($queryproducts);
                                                 echo $productsrows;
                                                 ?>
-
                                             </div>
                                         </div>
                                         <i class="feather-xl text-white-50" data-feather="calendar"></i>

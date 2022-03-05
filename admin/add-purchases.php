@@ -111,7 +111,8 @@ include 'admin.php';
                                                                         while ($fetch  = mysqli_fetch_assoc($querysuppliers)) {
                                                                             $productid = $fetch['product_id'];
                                                                             $name = $fetch['product_name'];
-                                                                            echo "<option value='$supplierid'>$name</option>";
+                                                                            $desc = $fetch['product_description'];
+                                                                            echo "<option value='$supplierid'>$name - $desc</option>";
                                                                         }
                                                                     }
                                                                     ?> 
