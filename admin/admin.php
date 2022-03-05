@@ -18,7 +18,7 @@ if (!isset($_SESSION['admin'])) {
             $checkclientrows = mysqli_num_rows($queryemail);
             if ($checkclientrows >= 1) {
                 while ($fetchuser = mysqli_fetch_assoc($queryemail)) {
-                    $globaluserid = $fetchuser['user_id'];
+                    $globaluserid = $fetchuser['admin_id'];
                     $globaluserfullname = $fetchuser['admin_full_names'];
                     $globalusermobile = $fetchuser['admin_phone_number'];
                     $globaluseremail = $fetchuser['admin_email_address']; 

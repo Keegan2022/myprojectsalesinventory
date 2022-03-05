@@ -1,17 +1,17 @@
 <?php
 include '../db-connection.php';
 $supplier_id = mysqli_real_escape_string($conn, $_POST['customer_id']);
-$product_id = mysqli_real_escape_string($conn, $_POST['product_id']);
-$purchase_date = mysqli_real_escape_string($conn, $_POST['sales_date']);
+$product_id = mysqli_real_escape_string($conn, $_POST['product_id']); 
 $quantity = mysqli_real_escape_string($conn, $_POST['quantity']);
 $unit_price = mysqli_real_escape_string($conn, $_POST['unit_price']);
 $purchase_returns = mysqli_real_escape_string($conn, $_POST['purchase_returns']);
-if (empty($supplier_id) || empty($product_id) || empty($purchase_date) || empty($quantity) || empty($unit_price) || empty($purchase_returns)) {
+if (empty($supplier_id) || empty($product_id) || empty($quantity) || empty($unit_price)) {
     $message = "
         <script>
-            toastr.error('Please Provide all the details needed');
+            toastr.error('Please Provide all the details ndededeeded');
         </script>
     ";
+  
 } else if ($quantity < 1) {
     $message = "
     <script>
@@ -20,8 +20,8 @@ if (empty($supplier_id) || empty($product_id) || empty($purchase_date) || empty(
 ";
 }  else {
     $amount = $unit_price * $quantity;
-
-    $insertproduct = "INSERT INTO `sales`(`sales_date`, `sales_customer_id`, `sales_product_id`, `sales_quantity`, `sales_product_unit_price`, `sales_total_amount`, `sales_returns`) VALUES ('$purchase_date', '$supplier_id','$product_id','$quantity','$unit_price','$amount','$purchase_returns')";
+    $today = date('d-m-Y');
+    $insertproduct = "INSERT INTO `sales`(`sales_date`, `sales_customer_id`, `sales_product_id`, `sales_quantity`, `sales_product_unit_price`, `sales_total_amount`, `sales_returns`) VALUES ('$today', '$supplier_id','$product_id','$quantity','$unit_price','$amount','$purchase_returns')";
     $querylogin = mysqli_query($conn, $insertproduct);
     $lastid =  mysqli_insert_id($conn);
     if ($querylogin) {

@@ -60,13 +60,13 @@ include 'admin.php';
                                 <div class="card-body">
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="me-3">
-                                            <div class="text-white-75 small">Products
+                                            <div class="text-white-75 small">Customers
                                                 
                                             </div>
                                             <div class="text-lg fw-bold">
                                                 <?php
                                                 include '../db-connection.php';
-                                                $products = "SELECT * FROM `product`";
+                                                $products = "SELECT * FROM `customer`";
                                                 $queryproducts = mysqli_query($conn, $products);
                                                 $productsrows = mysqli_num_rows($queryproducts);
                                                 echo $productsrows;
@@ -78,7 +78,7 @@ include 'admin.php';
                                     </div>
                                 </div>
                                 <div class="card-footer d-flex align-items-center justify-content-between small">
-                                    <a class="text-white stretched-link" href="all-products.php">View Report</a>
+                                    <a class="text-white stretched-link" href="all-customers.php">View Report</a>
                                     <div class="text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
                             </div>
@@ -269,7 +269,7 @@ include 'admin.php';
                                             $mfgdate = $fetch['product_date_of_manufacture'];
                                             $expiry = $fetch['product_expiry_date'];
                                             $price = $fetch['product_unit_price'];
-                                            $amount = $fetch['product_amount'];
+                                            $amount = $fetch['product_quantity'];
                                             $proid = $fetch['product_id'];
 
 

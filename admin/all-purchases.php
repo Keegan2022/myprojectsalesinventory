@@ -62,8 +62,7 @@ include 'admin.php';
                                         <th>Product</th>
                                         <th>Quantity</th>
                                         <th>Unit Price</th>
-                                        <th>Total Spend</th>
-                                        <th>Purchase Returns</th>
+                                        <th>Total Spend</th> 
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
@@ -75,8 +74,7 @@ include 'admin.php';
                                         <th>Product</th>
                                         <th>Quantity</th>
                                         <th>Unit Price</th>
-                                        <th>Total Spend</th>
-                                        <th>Purchase Returns</th>
+                                        <th>Total Spend</th> 
                                         <th>Actions</th>
                                     </tr>
                                 </tfoot>
@@ -128,8 +126,7 @@ include 'admin.php';
                                                     <td>$productname</td>
                                                     <td>$quantity</td>
                                                     <td>$unitprice</td>
-                                                    <td>$tamount</td>
-                                                    <td>$returns</td> 
+                                                    <td>$tamount</td> 
                                                     <td>
                                                     <a href='edit-purchases.php?purchases=$purchaseid' class='btn btn-datatable btn-icon btn-transparent-dark me-2'><i data-feather='edit-3'></i></a>
                                                     <a href='delete-purchases.php?purchases=$purchaseid' class='btn btn-datatable btn-icon btn-transparent-dark'><i data-feather='trash-2'></i></a>
