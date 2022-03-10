@@ -7,7 +7,7 @@ $quantity = mysqli_real_escape_string($conn, $_POST['quantity']);
 $unit_price = mysqli_real_escape_string($conn, $_POST['unit_price']);
 $purchase_returns = mysqli_real_escape_string($conn, $_POST['purchase_returns']);
 $salesrecord = mysqli_real_escape_string($conn, $_POST['salesrecord']);
-if (empty($supplier_id) || empty($product_id) || empty($purchase_date) || empty($quantity) || empty($unit_price) || empty($purchase_returns)) {
+if (empty($supplier_id) || empty($product_id)  || empty($quantity) || empty($unit_price) || empty($purchase_returns)) {
     $message = "
         <script>
             toastr.error('Please Provide all the details needed');
@@ -21,8 +21,8 @@ if (empty($supplier_id) || empty($product_id) || empty($purchase_date) || empty(
 ";
 }  else {
     $amount = $unit_price * $quantity;
-
-    $insertproduct = "UPDATE  `sales` SET `sales_date`='$purchase_date', `sales_customer_id`='$supplier_id', `sales_product_id`='$product_id', `sales_quantity`='$quantity', `sales_product_unit_price`='$unit_price', `sales_total_amount`='$amount', `sales_returns`='$purchase_returns' WHERE `sales_id`='$salesrecord'";
+    $date = date('d-m-Y');
+    $insertproduct = "UPDATE  `sales` SET `sales_date`='$date', `sales_customer_id`='$supplier_id', `sales_product_id`='$product_id', `sales_quantity`='$quantity', `sales_product_unit_price`='$unit_price', `sales_total_amount`='$amount', `sales_returns`='$purchase_returns' WHERE `sales_id`='$salesrecord'";
     $querylogin = mysqli_query($conn, $insertproduct);
     $lastid =  mysqli_insert_id($conn);
     if ($querylogin) {

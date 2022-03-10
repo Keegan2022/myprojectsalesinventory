@@ -91,7 +91,7 @@ include 'cashier.php';
                                         $count = 1;
                                         while ($fetch  = mysqli_fetch_assoc($querypurchases)) {
                                             $date = $fetch['sales_date'];
-                                            $supplier = $fetch['sales_customer_id'];
+                                            $customer = $fetch['sales_customer_id'];
                                             $product = $fetch['sales_product_id'];
                                             $quantity = $fetch['sales_quantity'];
                                             $unitprice = $fetch['sales_product_unit_price'];
@@ -109,14 +109,14 @@ include 'cashier.php';
                                                 }
                                             }
 
-                                            $suppliercheck = "SELECT * FROM `supplier` WHERE `supplier_id`='$supplier'";
+                                            $suppliercheck = "SELECT * FROM `customer` WHERE `customer_id`='$customer'";
                                             $querysuppliercheck = mysqli_query($conn, $suppliercheck);
                                             $suppliercheckrows = mysqli_num_rows($querysuppliercheck);
                                             if ($suppliercheckrows >= 1) {
                                                 $count = 1;
                                                 while ($fetch  = mysqli_fetch_assoc($querysuppliercheck)) { 
-                                                    $suppliercontact = $fetch['supplier_contact'];
-                                                    $suppliername = $fetch['supplier_name'];
+                                                    $suppliercontact = $fetch['customer_contact'];
+                                                    $suppliername = $fetch['customer_name'];
                                                 }
                                             }
 
@@ -132,7 +132,7 @@ include 'cashier.php';
                                                     <td>$returns</td> 
                                                     <td>
                                                     <a href='edit-sales.php?sales=$purchaseid' class='btn btn-datatable btn-icon btn-transparent-dark me-2'><i data-feather='edit-3'></i></a>
-                                                    <a href='delete-sales.php?sales=$purchaseid' class='btn btn-datatable btn-icon btn-transparent-dark'><i data-feather='trash-2'></i></a>
+                                                    
                                                     </td>
 
                                                 </tr>
