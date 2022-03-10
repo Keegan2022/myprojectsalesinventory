@@ -20,11 +20,11 @@ if (empty($supplier_id) || empty($product_id)  || empty($quantity) || empty($uni
 } else {
     $amount = $unit_price * $quantity;
     $date = date('d-m-Y');
-    echo   $insertproduct = "INSERT INTO `purchases`(`purchases_date`, `purchases_supplier_id`, `purchases_product_id`, `purchases_quantity`, `purchases_product_unit_price`, `purchases_total_amount`) VALUES ('$date', '$supplier_id','$product_id','$quantity','$unit_price','$amount')";
+    $insertproduct = "INSERT INTO `purchases`(`purchases_date`, `purchases_supplier_id`, `purchases_product_id`, `purchases_quantity`, `purchases_product_unit_price`, `purchases_total_amount`) VALUES ('$date', '$supplier_id','$product_id','$quantity','$unit_price','$amount')";
     $queryproduct = mysqli_query($conn, $insertproduct);
-    $lastid =  mysqli_insert_id($conn);
+    echo $lastid =  mysqli_insert_id($conn);
     if ($queryproduct) {
-        echo  $addpurchase = "INSERT INTO `inventory`(`inventory_products_id`, `inventory_quantity`, `inventory_purchases_id`, `inventory_sales_returns`, `inventory_purchases_returns`) VALUES ('$product_id','$quantity','$lastid','0','0')";
+         $addpurchase = "INSERT INTO `inventory`(`inventory_products_id`, `inventory_quantity`, `inventory_purchases_id`, `inventory_sales_returns`, `inventory_purchases_returns`) VALUES ('$product_id','$quantity','$lastid','0','0')";
         $querypurchase = mysqli_query($conn, $addpurchase);
         if ($querypurchase) {
             $message = "

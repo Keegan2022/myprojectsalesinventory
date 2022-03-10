@@ -24,22 +24,23 @@ if (empty($inventory_id)  || empty($quantity) || empty($unit_price)) {
         $count = 1;
         while ($fetch  = mysqli_fetch_assoc($queryinventory)) {
             $inventorypurchases = $fetch['inventory_purchases_id'];
+            $inventoryquantity = $fetch['inventory_quantity'];
+            echo $globalquantity = $inventoryquantity + $quantity;
 
-            $product = "SELECT * FROM `purchases` WHERE `purchases_id`='$inventorypurchases'";
-            $queryproduct = mysqli_query($conn, $product);
+            echo $productchecks = "SELECT * FROM `purchases` WHERE `purchases_id`='$inventorypurchases'";
+            $queryproduct = mysqli_query($conn, $productchecks);
             $productrows = mysqli_num_rows($queryproduct);
             if ($productrows >= 1) {
                 $count = 1;
                 while ($fetchp  = mysqli_fetch_assoc($queryproduct)) {
                     $psupplier = $fetchp['purchases_supplier_id'];
                     $pproduct = $fetchp['purchases_product_id'];
-
                     $date = date('d-m-Y');
                     $amount = $unit_price * $quantity;
                     $insertproduct = "INSERT INTO `purchases`(`purchases_date`, `purchases_supplier_id`, `purchases_product_id`, `purchases_quantity`, `purchases_product_unit_price`, `purchases_total_amount`) VALUES ('$date', '$psupplier','$pproduct','$quantity','$unit_price','$amount')";
                     $queryproduct = mysqli_query($conn, $insertproduct);
                     if ($queryproduct) {
-                        $updateinventory = "UPDATE `inventory` SET `inventory_quantity`='$quantity' WHERE `inventory_id`='$inventory_id'";
+                        $updateinventory = "UPDATE `inventory` SET `inventory_quantity`='$globalquantity' WHERE `inventory_id`='$inventory_id'";
                         $queryupdateinventory = mysqli_query($conn, $updateinventory);
                         if($queryupdateinventory){
                            

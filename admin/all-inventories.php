@@ -97,6 +97,8 @@ include 'admin.php';
                                                 $count = 1;
                                                 while ($fetch  = mysqli_fetch_assoc($queryproduct)) { 
                                                     $productname = $fetch['product_name'];
+                                                    $productcat = $fetch['product_category'];
+                                                    $productdesc = $fetch['product_description'];
                                                 }
                                             }
 
@@ -105,7 +107,7 @@ include 'admin.php';
                                             echo "
                                                 <tr>
                                                     <td>$count</td>
-                                                    <td>$product</td> 
+                                                    <td>$productcat - $productname - $productdesc</td> 
                                                     <td>$quantity</td> 
                                                     <td>$sales</td>
                                                     <td>$purchases</td> 

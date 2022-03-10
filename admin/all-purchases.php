@@ -35,9 +35,9 @@ include 'admin.php';
                                 <div class="col-auto mt-4">
                                     <h1 class="page-header-title">
                                         <div class="page-header-icon"><i data-feather="activity"></i></div>
-                                        All Products
+                                        All Purchases/Supplies
                                     </h1>
-                                    <div class="page-header-subtitle">Manage Your Products from this page</div>
+                                    <div class="page-header-subtitle">Manage Your SUpplies/Purchases from this page</div>
                                 </div>
                                 <div class="col-12 col-xl-auto mt-4">
 
@@ -51,7 +51,7 @@ include 'admin.php';
 
 
                     <div class="card mb-4">
-                        <div class="card-header">All Products</div>
+                        <div class="card-header">All Purchases/Suppliers made</div>
                         <div class="card-body">
                             <table id="datatablesSimple">
                                 <thead>
@@ -101,7 +101,7 @@ include 'admin.php';
                                             $queryproduct = mysqli_query($conn, $product);
                                             $productrows = mysqli_num_rows($queryproduct);
                                             if ($productrows >= 1) {
-                                                $count = 1;
+                                           
                                                 while ($fetch  = mysqli_fetch_assoc($queryproduct)) { 
                                                     $productname = $fetch['product_name'];
                                                 }
@@ -111,7 +111,7 @@ include 'admin.php';
                                             $querysuppliercheck = mysqli_query($conn, $suppliercheck);
                                             $suppliercheckrows = mysqli_num_rows($querysuppliercheck);
                                             if ($suppliercheckrows >= 1) {
-                                                $count = 1;
+                                               
                                                 while ($fetch  = mysqli_fetch_assoc($querysuppliercheck)) { 
                                                     $suppliercontact = $fetch['supplier_contact'];
                                                     $suppliername = $fetch['supplier_name'];

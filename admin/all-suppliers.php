@@ -96,7 +96,7 @@ include 'admin.php';
                                             $queryuser = mysqli_query($conn, $user);
                                             $userrows = mysqli_num_rows($queryuser);
                                             if ($userrows >= 1) {
-                                                $count = 1;
+                                         
                                                 while ($fetchdata  = mysqli_fetch_assoc($queryuser)) {
                                                     $username = $fetchdata['login_username'];
                                                 }

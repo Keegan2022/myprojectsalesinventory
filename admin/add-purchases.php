@@ -112,7 +112,7 @@ include 'admin.php';
                                                                             $productid = $fetch['product_id'];
                                                                             $name = $fetch['product_name'];
                                                                             $desc = $fetch['product_description'];
-                                                                            echo "<option value='$supplierid'>$name - $desc</option>";
+                                                                            echo "<option value='$productid'>$productid - $name - $desc</option>";
                                                                         }
                                                                     }
                                                                     ?> 

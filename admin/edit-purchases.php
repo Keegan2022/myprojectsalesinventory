@@ -100,7 +100,7 @@ if ($purchasesrows >= 1) {
                             <!-- Default Bootstrap Form Controls-->
                             <div id="default">
                                 <div class="card mb-4">
-                                    <div class="card-header">Edit Purchases</div>
+                                    <div class="card-header">Restock  Purchases</div>
                                     <div class="card-body">
                                         <!-- Component Preview-->
                                         <div class="sbp-preview">
@@ -114,69 +114,15 @@ if ($purchasesrows >= 1) {
                                                     ?>
                                                     <?php echo $message; ?>
                                                     <div class="row">
-                                                        <div class="col-lg-6">
-
-                                                            <div class="mb-3">
-                                                                <label for="exampleFormControlSelect1">
-                                                                    Supplier Name</label>
-                                                                <select class="form-control" id="exampleFormControlSelect1" name="supplier_id">
-                                                                    <option value="">click to select</option>
-                                                                    <?php
-                                                                    include '../db-connection.php';
-
-                                                                    $suppliers = "SELECT * FROM `supplier`";
-                                                                    $querysuppliers = mysqli_query($conn, $suppliers);
-                                                                    $suppliersrows = mysqli_num_rows($querysuppliers);
-                                                                    if ($suppliersrows >= 1) {
-                                                                        $count = 1;
-                                                                        while ($fetch  = mysqli_fetch_assoc($querysuppliers)) {
-                                                                            $supplierid = $fetch['supplier_id'];
-                                                                            $name = $fetch['supplier_name'];
-                                                                            echo "<option value='$supplierid'>$name</option>";
-                                                                        }
-                                                                    }
-                                                                    ?>
-                                                                </select>
-                                                            </div>
+                                                        <div class="col-lg-4">
+                                                            <label for="exampleFormControlInput1">Quantity In Stock - <?php echo $globalquantity; ?></label>
+                                                            <input class="form-control" id="exampleFormControlInput1" type="number" placeholder="" name="quantity"  />
                                                         </div>
-                                                        <div class="col-lg-6">
-                                                            <label for="exampleFormControlSelect1">Product
-                                                                Name</label>
-                                                            <select class="form-control" id="exampleFormControlSelect1" name="product_id">
-                                                                <option value="">click to select</option>
-                                                                <?php
-                                                                include '../db-connection.php';
-
-                                                                $suppliers = "SELECT * FROM `product`";
-                                                                $querysuppliers = mysqli_query($conn, $suppliers);
-                                                                $suppliersrows = mysqli_num_rows($querysuppliers);
-                                                                if ($suppliersrows >= 1) {
-                                                                    $count = 1;
-                                                                    while ($fetch  = mysqli_fetch_assoc($querysuppliers)) {
-                                                                        $productid = $fetch['product_id'];
-                                                                        $name = $fetch['product_name'];
-                                                                        echo "<option value='$supplierid'>$name</option>";
-                                                                    }
-                                                                }
-                                                                ?>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-
-                                                        <div class="col-lg-3">
-                                                            <label for="exampleFormControlInput1">Purchase Date</label></label>
-                                                            <input class="form-control" id="exampleFormControlInput1" type="date" placeholder="" name="purchase_date" value="<?php echo $globaldate; ?>" />
-                                                        </div>
-                                                        <div class="col-lg-3">
-                                                            <label for="exampleFormControlInput1">Quantity</label>
-                                                            <input class="form-control" id="exampleFormControlInput1" type="number" placeholder="" name="quantity" value="<?php echo $globalquantity; ?>" />
-                                                        </div>
-                                                        <div class="col-lg-3">
+                                                        <div class="col-lg-4">
                                                             <label for="exampleFormControlInput1">Unit Price</label>
                                                             <input class="form-control" id="exampleFormControlInput1" type="text" placeholder="" name="unit_price" value="<?php echo $globalunitprice; ?>" />
                                                         </div>
-                                                        <div class="col-lg-3">
+                                                        <div class="col-lg-4">
                                                             <label for="exampleFormControlInput1">Purchase Returns </label>
                                                             <input class="form-control" id="exampleFormControlInput1" type="text" placeholder="" name="purchase_returns" value="<?php echo $globalreturns; ?>" />
                                                         </div>
