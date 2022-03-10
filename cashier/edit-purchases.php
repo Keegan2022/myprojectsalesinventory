@@ -1,5 +1,5 @@
 <?php
-include 'admin.php';
+include 'cashier.php';
 ?>
 <?php $purchase_date = $purchase_returns = $unit_price = $quantity   = $message = ''; ?>
 <?php

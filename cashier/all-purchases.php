@@ -1,5 +1,5 @@
 <?php
-include 'admin.php';
+include 'cashier.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -62,8 +62,7 @@ include 'admin.php';
                                         <th>Product</th>
                                         <th>Quantity</th>
                                         <th>Unit Price</th>
-                                        <th>Total Spend</th>
-                                        <th>Purchase Returns</th>
+                                        <th>Total Spend</th> 
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
@@ -75,8 +74,7 @@ include 'admin.php';
                                         <th>Product</th>
                                         <th>Quantity</th>
                                         <th>Unit Price</th>
-                                        <th>Total Spend</th>
-                                        <th>Purchase Returns</th>
+                                        <th>Total Spend</th> 
                                         <th>Actions</th>
                                     </tr>
                                 </tfoot>
@@ -103,7 +101,7 @@ include 'admin.php';
                                             $queryproduct = mysqli_query($conn, $product);
                                             $productrows = mysqli_num_rows($queryproduct);
                                             if ($productrows >= 1) {
-                                                $count = 1;
+                                                
                                                 while ($fetch  = mysqli_fetch_assoc($queryproduct)) { 
                                                     $productname = $fetch['product_name'];
                                                 }
@@ -113,7 +111,7 @@ include 'admin.php';
                                             $querysuppliercheck = mysqli_query($conn, $suppliercheck);
                                             $suppliercheckrows = mysqli_num_rows($querysuppliercheck);
                                             if ($suppliercheckrows >= 1) {
-                                                $count = 1;
+                                           
                                                 while ($fetch  = mysqli_fetch_assoc($querysuppliercheck)) { 
                                                     $suppliercontact = $fetch['supplier_contact'];
                                                     $suppliername = $fetch['supplier_name'];
@@ -128,11 +126,10 @@ include 'admin.php';
                                                     <td>$productname</td>
                                                     <td>$quantity</td>
                                                     <td>$unitprice</td>
-                                                    <td>$tamount</td>
-                                                    <td>$returns</td> 
+                                                    <td>$tamount</td> 
                                                     <td>
                                                     <a href='edit-purchases.php?purchases=$purchaseid' class='btn btn-datatable btn-icon btn-transparent-dark me-2'><i data-feather='edit-3'></i></a>
-                                                    <a href='delete-purchases.php?purchases=$purchaseid' class='btn btn-datatable btn-icon btn-transparent-dark'><i data-feather='trash-2'></i></a>
+                                                    
                                                     </td>
 
                                                 </tr>
