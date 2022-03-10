@@ -47,21 +47,7 @@
                     <a class="nav-link" href="all-inventories.php">All Inventories</a>
                 </nav>
             </div>
-            <!-- Sidenav Accordion (Applications)-->
-            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse"
-                data-bs-target="#collapseApps" aria-expanded="false" aria-controls="collapseApps">
-                <div class="nav-link-icon"><i data-feather="globe"></i></div>
-                Products
-                <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-            </a>
-            <div class="collapse" id="collapseApps" data-bs-parent="#accordionSidenav">
-                <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavAppsMenu">
-                    <a class="nav-link" href="add-product.php">Add Product</a>
-                    <a class="nav-link" href="all-products.php">All Products</a>
-
-                </nav>
-            </div>
-            <!-- Sidenav Accordion (Flows)-->
+          
             <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse"
                 data-bs-target="#collapseFlows" aria-expanded="false" aria-controls="collapseFlows">
                 <div class="nav-link-icon"><i data-feather="repeat"></i></div>

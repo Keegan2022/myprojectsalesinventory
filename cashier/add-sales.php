@@ -1,5 +1,5 @@
 <?php
-include 'admin.php';
+include 'cashier.php';
 ?>
 <?php $sales_date = $purchase_returns = $unit_price = $quantity   = $message = ''; ?>
 <!DOCTYPE html>
@@ -110,8 +110,9 @@ include 'admin.php';
                                                                         $count = 1;
                                                                         while ($fetch  = mysqli_fetch_assoc($querysuppliers)) {
                                                                             $productid = $fetch['product_id'];
+                                                                            $desc = $fetch['product_description'];
                                                                             $name = $fetch['product_name'];
-                                                                            echo "<option value='$supplierid'>$name</option>";
+                                                                            echo "<option value='$productid'>$productid - $name - $desc</option>";
                                                                         }
                                                                     }
                                                                     ?> 
@@ -119,10 +120,7 @@ include 'admin.php';
                                                         </div>
                                                     </div>
                                                     <div class="row">
-                                                        <div class="col-lg-3">
-                                                            <label for="exampleFormControlInput1">Sales Date</label></label>
-                                                            <input class="form-control" id="exampleFormControlInput1" type="date" placeholder="" name="sales_date" value="<?php echo $sales_date; ?>" />
-                                                        </div>
+                                                       
                                                         <div class="col-lg-3">
                                                             <label for="exampleFormControlInput1">Quantity</label>
                                                             <input class="form-control" id="exampleFormControlInput1" type="number" placeholder="" name="quantity" value="<?php echo $quantity; ?>" />
@@ -132,8 +130,8 @@ include 'admin.php';
                                                             <input class="form-control" id="exampleFormControlInput1" type="text" placeholder="" name="unit_price" value="<?php echo $unit_price; ?>" />
                                                         </div>
                                                         <div class="col-lg-3">
-                                                            <label for="exampleFormControlInput1">Purchase Returns </label>
-                                                            <input class="form-control" id="exampleFormControlInput1" type="text" placeholder="" name="purchase_returns" value="<?php echo $purchase_returns; ?>" />
+                                                            <label for="exampleFormControlInput1">Sales Returns </label>
+                                                            <input class="form-control" id="exampleFormControlInput1" type="text" placeholder="" name="purchase_returns"  value="0" />
                                                         </div>
                                                     </div>
                                                     <br>

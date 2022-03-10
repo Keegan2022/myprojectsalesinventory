@@ -1,5 +1,5 @@
 <?php
-include 'admin.php';
+include 'cashier.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">

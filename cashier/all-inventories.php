@@ -60,7 +60,8 @@ include 'cashier.php';
                                         <th>Product</th> 
                                         <th>Total Quantity</th>
                                         <th>Sales Return</th>
-                                        <th>Purchase Return</th> 
+                                        <th>Purchase Return</th>
+                                        <th>Update Inventory</th> 
                                     </tr>
                                 </thead>
                                 <tfoot>
@@ -70,6 +71,7 @@ include 'cashier.php';
                                         <th>Total Quantity</th>
                                         <th>Sales Return</th>
                                         <th>Purchase Return</th> 
+                                        <th>Update Inventory</th>
                                     </tr>
                                 </tfoot>
                                 <tbody>
@@ -87,7 +89,6 @@ include 'cashier.php';
                                             $product = $fetch['inventory_products_id'];
                                             $purchases = $fetch['inventory_purchases_returns']; 
                                             $inventid = $fetch['inventory_id']; 
-
                                             $product = "SELECT * FROM `product` WHERE `product_id`='$product'";
                                             $queryproduct = mysqli_query($conn, $product);
                                             $productrows = mysqli_num_rows($queryproduct);
@@ -107,6 +108,9 @@ include 'cashier.php';
                                                     <td>$quantity</td> 
                                                     <td>$sales</td>
                                                     <td>$purchases</td> 
+                                                    <td>
+                                                    <a href='restock-inventory.php?inventory=$inventid' class='btn btn-datatable btn-icon btn-transparent-dark me-2'><i data-feather='edit-3'></i></a>
+                                                    </td>
                                                 
 
                                                 </tr>
