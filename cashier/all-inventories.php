@@ -96,6 +96,7 @@ include 'cashier.php';
                                                 $count = 1;
                                                 while ($fetch  = mysqli_fetch_assoc($queryproduct)) { 
                                                     $productname = $fetch['product_name'];
+                                                    $productdesc = $fetch['product_description'];
                                                 }
                                             }
 
@@ -104,7 +105,7 @@ include 'cashier.php';
                                             echo "
                                                 <tr>
                                                     <td>$count</td>
-                                                    <td>$productname</td> 
+                                                    <td>$productname - $productdesc</td> 
                                                     <td>$quantity</td> 
                                                     <td>$sales</td>
                                                     <td>$purchases</td> 
